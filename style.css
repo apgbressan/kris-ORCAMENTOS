@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #f4eee8;
+  font-family: 'Inter', sans-serif;
+  color: #3b2a1f;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: #fffaf5;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #d6c3b2;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: #6b4f3f;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+h1 span {
+  display: block;
+  margin-top: 6px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  color: #8a6a55;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  color: #6b4f3f;
+  margin-bottom: 10px;
+}
+
+/* =========================
+   LISTA DE PROCEDIMENTOS
+========================= */
+
+details {
+  margin-bottom: 10px;
+  border-left: 4px solid #c2a78f;
+  padding-left: 10px;
+}
+
+summary {
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+  background: #e6d6c9;
+  border-radius: 6px;
+  color: #5a3e2b;
+}
+
+label {
+  display: block;
+  padding: 6px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* =========================
+   RESUMO
+========================= */
+
+.resultado {
+  margin-top: 30px;
+  border-top: 1px solid #d6c3b2;
+  padding-top: 20px;
+}
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.linha.destaque span {
+  color: #b00020;
+  font-weight: 600;
+}
+
+.linha.economia span {
+  color: #1b7f3a;
+  font-weight: 600;
+}
+
+/* =========================
+   SELECIONADOS
+========================= */
+
+.selecionados {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+#selecionados div {
+  padding: 4px 0;
+  border-bottom: 1px dashed #d6c3b2;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+
+.acoes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6b4f3f, #9c7c5c);
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* =========================
+   MODO APRESENTAÇÃO
+========================= */
+
+.apresentacao details,
+.apresentacao summary,
+.apresentacao label,
+.apresentacao .acoes {
+  display: none;
+}
+
+.apresentacao .selecionados {
+  display: block;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .acoes {
+    flex-direction: column;
+  }
+}
+
+/* MELHORIA VISUAL DO PDF */
+.pdf h2 {
+  font-size: 26px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d6c3b2;
+  padding-bottom: 8px;
+}
+
+.pdf .linha {
+  font-size: 16px;
+}
+
+.pdf #selecionados div {
+  padding: 8px 0;
+}
+
+.pdf .container {
+  height: auto !important;
+}
+
+/* CORRIGE CORTE DE CONTEÚDO NO PDF */
+.pdf .container {
+  height: auto !important;
+}
+
+.pdf #conteudo {
+  height: auto !important;
+}
+
+.pdf .resultado {
+  page-break-inside: avoid;
+}
+
+.pdf #selecionados div {
+  page-break-inside: avoid;
+}
