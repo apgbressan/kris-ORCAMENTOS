@@ -419,22 +419,25 @@ function renderResumo() {
   selecionadosDiv.innerHTML = "";
 
   selecionados.forEach(item => {
-    if (
-  item.nome.includes("GESTRINONA") ||
-  item.nome.includes("TESTOSTERONA") ||
-  item.nome.includes("ESTRADIOL") ||
-  item.nome.includes("NADH") ||
-  item.nome.includes("RESVERATROL") ||
-  item.nome.includes("TADALAFILA") ||
-  item.nome.includes("ESTRIOL") ||
-  item.nome.includes("OXANDROLONA") ||
-  item.nome.includes("METFORMINA") ||
-  item.nome.includes("OCITOCINA")
-) {
-  temImplante = true;
-}
 
-    const linha = document.createElement("div");
+  total += Number(item.valor);
+
+  if (
+    item.nome.includes("GESTRINONA") ||
+    item.nome.includes("TESTOSTERONA") ||
+    item.nome.includes("ESTRADIOL") ||
+    item.nome.includes("NADH") ||
+    item.nome.includes("RESVERATROL") ||
+    item.nome.includes("TADALAFILA") ||
+    item.nome.includes("ESTRIOL") ||
+    item.nome.includes("OXANDROLONA") ||
+    item.nome.includes("METFORMINA") ||
+    item.nome.includes("OCITOCINA")
+  ) {
+    temImplante = true;
+  }
+
+  const linha = document.createElement("div");
     linha.textContent = `${item.nome} — ${item.valor.toLocaleString("pt-BR", {
       style: "currency",
       currency: "BRL"
@@ -444,7 +447,7 @@ function renderResumo() {
 });
 
 if (temImplante) {
-  total += 3000;
+  total = total + 3000;
 }
 
   let avista = total * 0.97;
