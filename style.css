@@ -56,6 +56,7 @@ details {
   margin-bottom: 10px;
   border-left: 4px solid #c2a78f;
   padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 summary {
@@ -65,17 +66,40 @@ summary {
   background: #e6d6c9;
   border-radius: 6px;
   color: #5a3e2b;
-}
-
-label {
-  display: block;
-  padding: 6px 0;
-  font-size: 14px;
-  cursor: pointer;
+  margin-bottom: 8px;
 }
 
 input[type="checkbox"] {
   margin-right: 8px;
+}
+
+/* =========================
+   ITENS DOS PROCEDIMENTOS
+========================= */
+
+.linha-item {
+  display: inline-grid;
+
+  grid-template-columns: 25px 60px 1fr;
+
+  align-items: center;
+  gap: 8px;
+
+  width: 48%;
+  margin-right: 2%;
+  margin-bottom: 6px;
+
+  vertical-align: top;
+
+  font-size: 14px;
+}
+
+.linha-item select {
+  padding: 3px 6px;
+  border-radius: 6px;
+  border: 1px solid #c2a78f;
+  background: #fffaf5;
+  color: #5a3e2b;
 }
 
 /* =========================
@@ -163,6 +187,7 @@ button:hover {
 ========================= */
 
 @media (max-width: 600px) {
+
   .container {
     padding: 20px;
   }
@@ -170,9 +195,18 @@ button:hover {
   .acoes {
     flex-direction: column;
   }
+
+  .linha-item {
+    width: 100%;
+    margin-right: 0;
+  }
+
 }
 
-/* MELHORIA VISUAL DO PDF */
+/* =========================
+   PDF
+========================= */
+
 .pdf h2 {
   font-size: 26px;
   margin-top: 25px;
@@ -189,70 +223,12 @@ button:hover {
   padding: 8px 0;
 }
 
-.pdf .container {
-  height: auto !important;
-}
-
-/* CORRIGE CORTE DE CONTEÚDO NO PDF */
-.pdf .container {
-  height: auto !important;
-}
-
+.pdf .container,
 .pdf #conteudo {
   height: auto !important;
 }
 
-.pdf .resultado {
-  page-break-inside: avoid;
-}
-
+.pdf .resultado,
 .pdf #selecionados div {
   page-break-inside: avoid;
-}
-.linha-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 0;
-  font-size: 14px;
-}
-
-.linha-item select {
-  padding: 3px 6px;
-  border-radius: 6px;
-  border: 1px solid #c2a78f;
-  background: #fffaf5;
-  color: #5a3e2b;
-}
-details {
-  padding-bottom: 10px;
-}
-
-.linha-item {
-  display: grid;
-  grid-template-columns: 25px 60px 1fr;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 0;
-}
-
-/* COLUNAS DOS ITENS */
-details .linha-item {
-  width: 100%;
-}
-
-details[open] {
-  display: block;
-}
-
-details[open] .linha-item {
-  display: inline-grid;
-  width: 48%;
-  margin-right: 2%;
-  vertical-align: top;
-}
-
-/* summary ocupa linha inteira */
-details summary {
-  grid-column: 1 / -1;
 }
