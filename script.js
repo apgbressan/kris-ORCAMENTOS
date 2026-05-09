@@ -133,35 +133,11 @@ function renderResumo() {
 
     total += 2000;
 
-    const linhaTaxa = document.createElement("div");
-
-    linhaTaxa.textContent =
-      `Taxa adicional — ${(
-        2000
-      ).toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      })}`;
-
-    selecionadosDiv.appendChild(linhaTaxa);
-
   }
 
   if (taxa3000.checked) {
 
     total += 3000;
-
-    const linhaTaxa = document.createElement("div");
-
-    linhaTaxa.textContent =
-      `Taxa adicional — ${(
-        3000
-      ).toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      })}`;
-
-    selecionadosDiv.appendChild(linhaTaxa);
 
   }
 
