@@ -151,7 +151,7 @@ button:hover {
 
 .apresentacao details,
 .apresentacao summary,
-.apresentacao label,
+.apresentacao .linha-item,
 .apresentacao .acoes {
   display: none;
 }
