@@ -414,10 +414,25 @@ function atualizarSelecionados() {
 
 function renderResumo() {
   let total = 0;
+  let temImplante = false;
+
   selecionadosDiv.innerHTML = "";
 
   selecionados.forEach(item => {
-    total += item.valor;
+    if (
+  item.nome.includes("GESTRINONA") ||
+  item.nome.includes("TESTOSTERONA") ||
+  item.nome.includes("ESTRADIOL") ||
+  item.nome.includes("NADH") ||
+  item.nome.includes("RESVERATROL") ||
+  item.nome.includes("TADALAFILA") ||
+  item.nome.includes("ESTRIOL") ||
+  item.nome.includes("OXANDROLONA") ||
+  item.nome.includes("METFORMINA") ||
+  item.nome.includes("OCITOCINA")
+) {
+  temImplante = true;
+}
 
     const linha = document.createElement("div");
     linha.textContent = `${item.nome} — ${item.valor.toLocaleString("pt-BR", {
@@ -426,7 +441,11 @@ function renderResumo() {
     })}`;
 
     selecionadosDiv.appendChild(linha);
-  });
+});
+
+if (temImplante) {
+  total += 3000;
+}
 
   let avista = total * 0.97;
   let parcelamentoTexto = "Somente à vista";
