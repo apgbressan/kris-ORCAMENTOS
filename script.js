@@ -25,8 +25,7 @@ const secoes = [
       ["OXANDROLONA 50 mg", 381, true],
       ["METFORMINA 50 mg", 143, true],
       ["OCITOCINA 50 mg", 380, true],
-
-      // item oculto
+      
       ["VALOR_INTERNO", 3000, false]
     ]
   }
