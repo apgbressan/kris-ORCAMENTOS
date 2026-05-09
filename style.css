@@ -211,3 +211,18 @@ button:hover {
 .pdf #selecionados div {
   page-break-inside: avoid;
 }
+.linha-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.linha-item select {
+  padding: 3px 6px;
+  border-radius: 6px;
+  border: 1px solid #c2a78f;
+  background: #fffaf5;
+  color: #5a3e2b;
+}
