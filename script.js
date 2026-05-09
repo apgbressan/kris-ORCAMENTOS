@@ -97,7 +97,11 @@ linha.appendChild(quantidade);
 linha.appendChild(texto);
 
 details.appendChild(linha);
+ });
 
+  container.appendChild(details);
+
+});
 });
 
 function atualizarSelecionados() {
@@ -268,5 +272,8 @@ document.getElementById("btnPDF").onclick = () => {
   }, 300);
 
 };
+
+document.body.classList.remove("apresentacao");
+document.body.classList.remove("pdf");
 
 renderResumo();
