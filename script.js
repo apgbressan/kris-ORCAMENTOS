@@ -1,16 +1,36 @@
 const secoes = [
   {
-    titulo: "Taxas e anestesias",
+    titulo: "Implantes",
     itens: [
-      ["Taxa de Sala", 550],
-      ["Consulta", 880],
-      ["Carbox (sessão/região)", 715],
-      ["Analgesia Inalatória", 600],
-      ["Equipe de Analgesia (1h)", 2800],
-      ["Equipe de Analgesia (2h)", 3080],
-      ["Analgesia Inalatória – Óxido Nitroso", 600],
+      ["GESTRINONA 25 mg", 336, true],
+      ["GESTRINONA 35 mg", 381, true],
+      ["GESTRINONA 40 mg", 448, true],
+      ["GESTRINONA 50 mg", 538, true],
+      ["GESTRINONA 85 mg", 851, true],
+      ["GESTRINONA 100 mg", 1030, true],
+      ["TESTOSTERONA 50 mg", 123, true],
+      ["TESTOSTERONA 75 mg", 168, true],
+      ["TESTOSTERONA 100 mg", 190, true],
+      ["TESTOSTERONA 200 mg", 336, true],
+      ["ESTRADIOL 10 mg", 179, true],
+      ["ESTRADIOL 12,5 mg", 196, true],
+      ["ESTRADIOL 15 mg", 196, true],
+      ["ESTRADIOL 25 mg", 213, true],
+      ["NADH 200 mg", 291, true],
+      ["NADH 400 mg", 381, true],
+      ["RESVERATROL 100 mg", 242, true],
+      ["TADALAFILA 50 mg", 269, true],
+      ["ESTRIOL 75 mg", 224, true],
+      ["OXANDROLONA 25 mg", 258, true],
+      ["OXANDROLONA 50 mg", 381, true],
+      ["METFORMINA 50 mg", 143, true],
+      ["OCITOCINA 50 mg", 380, true],
+
+      // item oculto
+      ["VALOR_INTERNO", 3000, false]
     ]
-  },
+  }
+    ]
 
   {
     titulo: "Cirúrgicos / Dermatológicos",
@@ -355,23 +375,27 @@ secoes.forEach(secao => {
   details.appendChild(summary);
 
   secao.itens.forEach(item => {
-    const label = document.createElement("label");
-    const checkbox = document.createElement("input");
 
-    checkbox.type = "checkbox";
-    checkbox.dataset.nome = item[0];
-    checkbox.dataset.valor = item[1];
+  // esconde itens marcados como false
+  if (!item[2] && item[2] !== undefined) return;
 
-    checkbox.addEventListener("change", () => {
-      const marcados = details.querySelectorAll("input:checked").length;
-      details.open = marcados > 0;
-      atualizarSelecionados();
-    });
+  const label = document.createElement("label");
+  const checkbox = document.createElement("input");
 
-    label.appendChild(checkbox);
-    label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
-    details.appendChild(label);
+  checkbox.type = "checkbox";
+  checkbox.dataset.nome = item[0];
+  checkbox.dataset.valor = item[1];
+
+  checkbox.addEventListener("change", () => {
+    const marcados = details.querySelectorAll("input:checked").length;
+    details.open = marcados > 0;
+    atualizarSelecionados();
   });
+
+  label.appendChild(checkbox);
+  label.append(` ${item[0]} — R$ ${item[1].toLocaleString("pt-BR")}`);
+  details.appendChild(label);
+});
 
   container.appendChild(details);
 });
