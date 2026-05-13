@@ -174,20 +174,20 @@ total += item.valor * item.quantidade;
 
   let parcelamentoTexto = "Somente à vista";
 
-  if (total >= 11000) {
-
-    parcelamentoTexto =
-      "10x de " +
-      (total / 10).toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      });
-
-  } else if (total > 2000) {
+  if (total >= 2000) {
 
     parcelamentoTexto =
       "6x de " +
       (total / 6).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
+
+  } else if (total > 950) {
+
+    parcelamentoTexto =
+      "3x de " +
+      (total / 3).toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL"
       });
